@@ -1,5 +1,6 @@
 ---
 import Header from '../components/Header.astro';
+import SideNav from '@components/SideNav.astro';
 const { title } = Astro.props;
 ---
 
@@ -12,7 +13,8 @@ const { title } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/images/favicon.png" />
     <title>{title}</title>
   </head>
-  <body class="bg-white pt-7 px-4 pb-[80px] font-sans text-[15px]">
+  <body class="bg-white pt-7 px-4 pb-[80px] font-sans text-[15px] relative">
+    <SideNav />
     <Header />
     <main>
       <slot />
@@ -33,3 +35,13 @@ const { title } = Astro.props;
       U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
   }
 </style>
+
+<script>
+  document.getElementById('menu').addEventListener('click', () => {
+    document.getElementById('nav').style.display = 'block';
+  });
+
+  document.getElementById('close').addEventListener('click', () => {
+    document.getElementById('nav').style.display = 'none';
+  });
+</script>
