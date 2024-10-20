@@ -1,1 +1,34 @@
-HIGHLIGHTS SECTION
+---
+import HighlightsPost from '@components/HighlightsPost.astro';
+
+const posts = [
+  {
+    imageUrl: '/images/image-retro-pcs.jpg',
+    title: 'Reviving Retro PCs',
+    description: 'What happens when old PCs are given modern upgrades?',
+  },
+  {
+    imageUrl: '/images/image-top-laptops.jpg',
+    title: 'Top 10 Laptops of 2022',
+    description: 'Our best picks for various needs and budgets.',
+  },
+  {
+    imageUrl: '/images/image-gaming-growth.jpg',
+    title: 'The Growth of Gaming',
+    description: 'How the pandemic has sparked fresh opportunities.',
+  },
+];
+---
+
+<section class="flex flex-col gap-8">
+  {
+    posts.map((post, i) => (
+      <HighlightsPost
+        imageUrl={post.imageUrl}
+        num={`0${i + 1}`}
+        title={post.title}
+        description={post.description}
+      />
+    ))
+  }
+</section>
