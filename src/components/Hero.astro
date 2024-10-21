@@ -2,28 +2,20 @@
 import { Image } from 'astro:assets';
 import Button from './Button.astro';
 
-import smallImage from '../assets/image-web-3-mobile.jpg';
-import largeImage from '../assets/image-web-3-desktop.jpg';
+import mobileImage from '@assets/image-web-3-mobile.jpg';
+import desktopImage from '@assets/image-web-3-desktop.jpg';
 ---
 
 <section class="mb-16 col-span-2">
-  <Image
-    src={smallImage}
-    class="mb-6 mx-w-full"
-    alt="some text"
-    widths={[300, 600]}
-    sizes="(max-width: 600px) 300px, 600px"
-  />
-
-  <Image
-    src="/images/image-web-3-mobile.jpg"
-    class="mb-6 mx-w-full"
-    alt="some text"
-    widths={[600, 1200]}
-    sizes="(max-width: 1200px) 600px, 1200px"
-    width={686}
-    height={600}
-  />
+  <picture>
+    <source media="(max-width: 768px)" srcset={mobileImage.src} />
+    <source media="(min-width: 800px)" srcset={desktopImage.src} />
+    <img
+      src={desktopImage.src}
+      class="mb-6 mx-w-full"
+      alt={'geometric shapes'}
+    />
+  </picture>
 
   <h1 class="text-[40px] font-extrabold leading-[40px] mb-4">
     The Bright Future of Web 3.0?
@@ -35,5 +27,3 @@ import largeImage from '../assets/image-web-3-desktop.jpg';
   </p>
   <Button text="read more" />
 </section>
-
-<!-- src={largeImage} -->
