@@ -40,10 +40,12 @@ const { title } = Astro.props;
   document.getElementById('menu').addEventListener('click', () => {
     document.getElementById('nav').style.display = 'block';
     document.body.style.overflow = 'hidden';
+    // document.body.style.backgroundColor = 'rgba(0, 0, 26, .5)';
   });
 
   document.getElementById('close').addEventListener('click', () => {
     document.getElementById('nav').style.display = 'none';
     document.body.style.overflow = 'scroll';
+    // document.body.style.backgroundColor = '';
   });
 </script>

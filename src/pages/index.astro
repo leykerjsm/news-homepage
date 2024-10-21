@@ -7,7 +7,11 @@ import Highlights from '@components/Highlights.astro';
 ---
 
 <PageLayout title="Frontend Mentor | News homepage">
-  <Hero />
-  <News />
-  <Highlights />
+  <div class="max-w-[1110px] mx-auto md:grid grid-cols-2 auto-rows-min">
+    <div class="col-span-2 md:grid grid-cols-3 gap-[30px]">
+      <Hero />
+      <News />
+    </div>
+    <Highlights />
+  </div>
 </PageLayout>
