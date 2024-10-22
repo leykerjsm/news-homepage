@@ -1,12 +1,13 @@
 ---
-import { Image } from 'astro:assets';
 import Button from './Button.astro';
+import Overlay from './Overlay.astro';
 
 import mobileImage from '@assets/image-web-3-mobile.jpg';
 import desktopImage from '@assets/image-web-3-desktop.jpg';
 ---
 
 <section class="mb-16 col-span-2">
+  <Overlay />
   <picture>
     <source media="(max-width: 768px)" srcset={mobileImage.src} />
     <source media="(min-width: 800px)" srcset={desktopImage.src} />

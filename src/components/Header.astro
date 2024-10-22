@@ -1,5 +1,6 @@
 ---
-
+import NavItem from './NavItem.astro';
+const links = ['home', 'new', 'popular', 'trending', 'categories'];
 ---
 
 <header
@@ -18,11 +19,7 @@
     <ul
       class="hidden text-gunmetal sm:flex gap-[24px] capitalize cursor-pointer"
     >
-      <li>home</li>
-      <li>new</li>
-      <li>popular</li>
-      <li>trending</li>
-      <li>categories</li>
+      {links.map(link => <NavItem linkItem={link} />)}
     </ul>
   </nav>
 </header>
